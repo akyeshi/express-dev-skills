@@ -1,0 +1,15 @@
+
+
+<%- include("../partials/header") %>
+<body>
+  <%- include("../partials/navbar")  %>
+  <h1>Skills</h1>
+  <ul>
+    <% skills.forEach(function(skill) { %>
+      <li>
+        <a href="/skills/<%= skill.id %>"><%= skill.skill %></a>
+      </li>
+    <% }); %>
+  </ul>
+  <%- include("../partials/footer")  %>
+</body>

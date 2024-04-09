@@ -1,8 +1,47 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  font-family: "Varela Round", system-ui;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+footer {
+  position: fixed; 
+  bottom: 0; 
+  padding: 0; 
+  margin: auto; 
+  width: 100%; 
+  text-align: center;
+  color: red;
+  font-size: 30px;
+}
+
+.home-text {
+  text-align: center;
+  margin-top: 50px; 
+  font-size: 80px;
+}
+
+nav>ul {
+  list-style-type: none; 
+  display: flex; 
+  justify-content: center;
+  gap: 50px; 
+}
+
+.home-li {
+  background-color: red;
+  border-radius: 8px;
+  font-size: 30px; 
+}
+
+
+.home-li:hover {
+  background-color: black;
+  border-radius: 8px;
+  font-size: 30px; 
 }
