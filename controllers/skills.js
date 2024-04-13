@@ -38,7 +38,6 @@ function newSkill(req, res) {
 
 function create(req, res) {
   console.log(req.body);
-  // the model is responsible for creating data
   Skills.create(req.body);
   // do a redirect anytime data is changed i.e. post/put
   res.redirect("/skills");
@@ -58,8 +57,6 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  // checked element has checked property value either as a 'on' or 'undefined'
-  req.body.done = !!req.body.done;
   Skills.updateOne(req.params.id, req.body);
   res.redirect("/skills");
 }

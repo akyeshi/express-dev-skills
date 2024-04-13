@@ -1,10 +1,9 @@
-const id = new Date().getTime() % 10000000;
 const skills = [
-  { id: id, skill: "Javascript", level: 6 },
-  { id: id, skill: "Java", level: 4 },
-  { id: id, skill: "Python", level: 5 },
-  { id: id, skill: "AWS", level: 8 },
-  { id: id, skill: "React", level: 3 },
+  { id: new Date().getTime() % 10000000, skill: "Javascript", level: 6 },
+  { id: new Date().getTime() % 10000000, skill: "Java", level: 4 },
+  { id: new Date().getTime() % 10000000, skill: "Python", level: 5 },
+  { id: new Date().getTime() % 10000000, skill: "AWS", level: 8 },
+  { id: new Date().getTime() % 10000000, skill: "React", level: 3 },
 ];
 
 module.exports = {
@@ -25,10 +24,7 @@ function getOne(id) {
 }
 
 function create(skill) {
-  // add the id
-  // skill.id = Date.now() % 1000000;
-  // // new todos wouldnot be done
-  // skill.skill = "Dart";
+  skill.id = Date.now() % 1000000;
   skills.push(skill);
 }
 
@@ -42,7 +38,10 @@ function deleteOne(id) {
 
 function updateOne(id, updatedSkill) {
   id = parseInt(id);
+  console.log("id: ", id);
   const skill = skills.find((skill) => skill.id === id);
+  console.log("skill: ", skill);
+  console.log("updatedSkill: ", updatedSkill);
   // merged right to left object properties
   Object.assign(skill, updatedSkill);
 }
