@@ -5,8 +5,12 @@
   <%- include("../partials/navbar")  %>
   <h1>Skills</h1>
   <ul>
+    <a href="/skills/new">Add To-Do</a>
     <% skills.forEach(function(skill) { %>
       <li>
+        <form action="/skills/<%= skill.id %>?_method=DELETE" class="delete-form" method="POST">
+          <button type="submit">X</button>
+        </form>
         <a href="/skills/<%= skill.id %>"><%= skill.skill %></a>
       </li>
     <% }); %>

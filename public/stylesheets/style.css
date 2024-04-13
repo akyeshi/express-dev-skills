@@ -53,3 +53,21 @@ nav>ul {
   border-radius: 8px;
   font-size: 30px; 
 }
+
+#math>a {
+  text-align: center;
+}
+
+
+.delete-form {
+  display: inline-block; 
+  margin-right: 10px;
+}
+
+.delete-form button {
+  color: red
+}
+
+li {
+  list-style: none;
+}

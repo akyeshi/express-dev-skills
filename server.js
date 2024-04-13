@@ -3,10 +3,11 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const methodOverride = require("method-override"); // not build into Express, need npm install
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-const skillsRouter = require("./routes/skills"); 
+const skillsRouter = require("./routes/skills");
 
 const app = express();
 
@@ -19,11 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(methodOverride("_method")); // adding method-override to the middleware pipeline
 
-// mount routers as middlewares 
+// mount routers as middlewares
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/skills", skillsRouter); 
+app.use("/skills", skillsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
