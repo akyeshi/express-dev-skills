@@ -4,6 +4,7 @@
 <body>
   <%- include("../partials/navbar")  %>
   <a href="/skills"> < Back</a>
+  <h2>Skill Details: (#<%= skill.id %>)</h2>
   <h3>Skill: <%=  skill.skill %></h3>
   <h3>Level: <%= skill.level %></h3>
   <a href="/skills/<%= skill.id %>/edit">Edit Skill</a>
