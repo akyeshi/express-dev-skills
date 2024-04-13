@@ -26,9 +26,9 @@ function getOne(id) {
 
 function create(skill) {
   // add the id
-  skill.id = Date.now() % 1000000;
-  // new todos wouldnot be done
-  skill.skill = "Dart";
+  // skill.id = Date.now() % 1000000;
+  // // new todos wouldnot be done
+  // skill.skill = "Dart";
   skills.push(skill);
 }
 

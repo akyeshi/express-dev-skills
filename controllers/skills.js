@@ -60,6 +60,6 @@ function edit(req, res) {
 function update(req, res) {
   // checked element has checked property value either as a 'on' or 'undefined'
   req.body.done = !!req.body.done;
-  Todo.updateOne(req.params.id, req.body);
+  Skills.updateOne(req.params.id, req.body);
   res.redirect("/skills");
 }
