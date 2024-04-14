@@ -42,6 +42,25 @@ function updateOne(id, updatedSkill) {
   const skill = skills.find((skill) => skill.id === id);
   console.log("skill: ", skill);
   console.log("updatedSkill: ", updatedSkill);
-  // merged right to left object properties
+
   Object.assign(skill, updatedSkill);
+  // mergeSkillWithUpdatedSkill(skill, updatedSkill);
+}
+
+function mergeSkillWithUpdatedSkill(skill, updatedSkill) {
+  let res = {};
+  for (const key in skill) {
+    if (key in updatedSkill) {
+      res[key] = updatedSkill[key];
+    } else {
+      res[key] = skill[key];
+    }
+  }
+
+  for (const key in updatedSkill) {
+    if (!(key in skill)) {
+      res[key] = updatedSkill[key];
+    }
+  }
+  return res;
 }

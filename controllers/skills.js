@@ -1,3 +1,4 @@
+// model: Skills
 const Skills = require("../models/skills");
 
 module.exports = {
@@ -12,15 +13,6 @@ module.exports = {
   update,
 };
 
-function show(req, res) {
-  // res.send(req.params);
-  // res.send(req.body);
-  res.render("skills/show", {
-    skill: Skills.getOne(req.params.id),
-    title: `Skill Detail (#${req.params.id})`,
-  });
-}
-
 // controllers/skills.js
 function index(req, res) {
   // ejs by default looks into /views folder
@@ -29,6 +21,15 @@ function index(req, res) {
   res.render("skills/index", {
     skills: Skills.getAll(),
     title: "All Skills",
+  });
+}
+
+function show(req, res) {
+  // res.send(req.params);
+  // res.send(req.body);
+  res.render("skills/show", {
+    skill: Skills.getOne(req.params.id),
+    title: `Skill Detail (#${req.params.id})`,
   });
 }
 
@@ -48,6 +49,8 @@ function deleteSkill(req, res) {
   res.redirect("/skills");
 }
 
+// Get the edit form:
+// when form is submitted, its POST method is changed to PUT
 function edit(req, res) {
   const skill = Skills.getOne(req.params.id);
   res.render("skills/edit", {
@@ -56,6 +59,7 @@ function edit(req, res) {
   });
 }
 
+//
 function update(req, res) {
   Skills.updateOne(req.params.id, req.body);
   res.redirect("/skills");
