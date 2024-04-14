@@ -11,10 +11,7 @@
         <form action="/skills/<%= skill.id %>?_method=DELETE" class="delete-form" method="POST">
           <button type="submit">X</button>
         </form>
-        <a href="/skills/<%= skill.id %>"><%= skill.skill %> (<%= 
-          new Date().toLocaleDateString('en-US', {
-          month: '2-digit', day: '2-digit', year: 'numeric'
-        }) %>)</a>
+        <a href="/skills/<%= skill.id %>"><%= skill.skill %> (<%= (time) %>)</a>
       </li>
     <% }); %>
   </ul>

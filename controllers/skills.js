@@ -15,12 +15,21 @@ module.exports = {
 
 // controllers/skills.js
 function index(req, res) {
+  const date = new Date(); 
+  const month = String(date.getMonth() + 1).padStart(2, '0'); 
+  const day = String(date.getDate()).padStart(2, '0'); 
+  const year = date.getFullYear(); 
+  const hour = String(date.getHours()).padStart(2, '0'); 
+  const minute = String(date.getMinutes()).padStart(2, '0'); 
+  const second = String(date.getSeconds()).padStart(2, '0'); 
+  const time = `${month}-${day}-${year} ${hour}:${minute}:${second}`; 
   // ejs by default looks into /views folder
   // DO NOT use a leading slash when rendering !
   // render view, also pass in data
   res.render("skills/index", {
     skills: Skills.getAll(),
     title: "All Skills",
+    time
   });
 }
 
